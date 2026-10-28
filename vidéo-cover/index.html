@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10142e">
+<meta name="description" content="Convertis une vidéo en audio, directement sur ton appareil.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Vidéo Cover</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><span class="logo"></span><h1>Vidéo Cover</h1><button id="install" hidden>Installer</button></header>
+<main>
+  <section id="s-pick">
+    <input type="file" id="file" accept="video/*" class="sr">
+    <label class="drop" id="drop" for="file">
+      <span class="orb"><i class="ring"></i><i class="ring r2"></i><b class="core"><svg viewBox="0 0 24 24"><path d="M4 6h10a2 2 0 0 1 2 2v2.5l4-2.5v8l-4-2.5V16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/></svg></b></span>
+      <span class="pick">Choisir une vidéo</span>
+    </label>
+  </section>
+  <section id="s-ready" hidden>
+    <div class="file"><video id="thumb" muted playsinline preload="metadata"></video><div><b id="name"></b><small id="size"></small></div></div>
+    <div class="seg"><button data-f="mp3" class="on">MP3</button><button data-f="wav">WAV</button></div>
+    <button class="cta" id="go">Convertir</button>
+    <button class="link" id="back">Changer de vidéo</button>
+  </section>
+  <section id="s-busy" hidden>
+    <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="track"><div id="bar"></div></div>
+    <p class="hint" id="msg"></p>
+  </section>
+  <section id="s-done" hidden>
+    <audio id="player" controls></audio>
+    <a class="cta alt" id="dl">Télécharger</a>
+    <button class="link" id="again">Autre vidéo</button>
+  </section>
+  <p id="err" hidden></p>
+</main>
+<a id="ad" class="ad" hidden target="_blank" rel="noopener"><img id="adimg" alt=""><em>Pub</em></a>
+<footer>Vidéo Cover by DEKAL HOUSE</footer>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
