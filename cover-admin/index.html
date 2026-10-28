@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10142e">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin Cover</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><span class="logo"></span><h1>Admin Cover</h1><button id="out" class="btn" hidden>Quitter</button></header>
+<main>
+  <form id="lf" class="box">
+    <input id="pw" type="password" placeholder="Mot de passe" autocomplete="current-password" required>
+    <button class="cta">Entrer</button>
+  </form>
+  <div id="dash" hidden>
+    <div class="grid" id="stats"></div>
+    <h2>7 derniers jours</h2>
+    <div class="box"><div class="chart" id="chart"></div><p class="key"><i class="o"></i>Ouvertures <i class="c"></i>Audios</p></div>
+    <h2>Nouvelle publicité</h2>
+    <form id="af" class="box">
+      <input id="t" placeholder="Titre (interne)" maxlength="80" required>
+      <input id="l" type="url" placeholder="Lien au clic (https://…)" required>
+      <label class="lbl">Fin de diffusion (facultatif)<input id="e" type="date"></label>
+      <label class="pickimg" for="f"><img id="prev" alt="" hidden><span id="ph">Choisir l’image (format 16:5, ex. 800×250)</span></label>
+      <input id="f" type="file" accept="image/*" class="sr">
+      <button class="cta">Publier</button>
+    </form>
+    <h2>Publicités</h2>
+    <div id="ads"></div>
+    <h2>Compte</h2>
+    <form id="pf" class="box">
+      <input id="po" type="password" placeholder="Ancien mot de passe" autocomplete="current-password" required>
+      <input id="pn" type="password" placeholder="Nouveau mot de passe (8 caractères min.)" autocomplete="new-password" minlength="8" required>
+      <button class="btn big">Changer le mot de passe</button>
+    </form>
+    <button id="reset" class="btn del big">Réinitialiser les statistiques</button>
+  </div>
+  <p id="msg" class="toast" hidden></p>
+</main>
+<footer>Admin Cover by DEKAL HOUSE</footer>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
